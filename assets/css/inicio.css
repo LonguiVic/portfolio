@@ -76,7 +76,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url('/images/python.jpg') no-repeat;
+    background: url('/images/BG-Python.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -214,4 +214,19 @@ section {
 .inicio-media a:hover::before {
     width: 100%;
 
+}
+
+.inicio-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+}
+
+.inicio-imgHover:hover {
+    background: var(--bg-color);
+    opacity: .8;
 }
