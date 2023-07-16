@@ -108,7 +108,7 @@ section {
     margin: 2rem 0 4rem;
 }
 
-.btn-box {
+.inicio-content .btn-box {
     position: relative;
     display: flex;
     justify-content: space-between;

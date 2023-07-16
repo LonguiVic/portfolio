@@ -32,38 +32,96 @@
         </nav>
     </header>
 
-    <!--design seção de início-->
-    <section class="inicio" id="inicio">
-        <div class="inicio-content">
-            <h1>Oi, eu sou <span>Victor Longui</span></h1>
-            <div class="text-animate">
-                <h3>Desenvolvedor Full stack</h3>
+    <!--Esse código foi inspirado no canal Codehal-->
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfólio Dev</title>
+
+        <link rel="stylesheet" href="/assets/css/inicio.css">
+        <link rel="stylesheet" href="/assets/css/sobre.css">
+
+
+        <!--box icons-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+
+        <!--header design-->
+        <header class="header">
+            <a href="#" class="logo">Victor.</a>
+
+            <div class="bx bx-menu" id="menu-icon"></div>
+
+            <nav class="navbar">
+                <a href="#inicio" class="active">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#educacao">Educação</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
+
+        <!--design seção de início-->
+        <section class="inicio" id="inicio">
+            <div class="inicio-content">
+                <h1>Oi, eu sou <span>Victor Longui</span></h1>
+                <div class="text-animate">
+                    <h3>Desenvolvedor Full stack</h3>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repudiandae nemo, possimus
+                    necessitatibus
+                    alias laboriosam inventore, sit enim velit pariatur similique repellendus! Nesciunt possimus cum
+                    laudantium
+                    mollitia?
+                </p>
+
+                <div class="btn-box">
+                    <a href="#" class="btn">Contrate-me</a>
+                    <a href="#" class="btn">Vamos conversar</a>
+
+                </div>
             </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repudiandae nemo, possimus
-                necessitatibus
-                alias laboriosam inventore, sit enim velit pariatur similique repellendus! Nesciunt possimus cum
-                laudantium
-                mollitia?
-            </p>
 
-            <div class="btn-box">
-                <a href="#" class="btn">Contrate-me</a>
-                <a href="#" class="btn">Vamos conversar</a>
-
+            <div class="inicio-media">
+                <a href="https://github.com/LonguiVic" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/victor-longui-pereira/" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
             </div>
-        </div>
+            <div class="inicio-imgHover"></div>
 
-        <div class="inicio-media">
-            <a href="https://github.com/LonguiVic" target="_blank"><i class='bx bxl-github'></i></a>
-            <a href="https://www.linkedin.com/in/victor-longui-pereira/" target="_blank"><i
-                    class='bx bxl-linkedin'></i></a>
-        </div>
-        <div class="inicio-imgHover"></div>
+        </section>
 
-    </section>
+        <!--Design da Seção Sobre-->
 
-    <script src="js/script.js"></script>
-</body>
+        <section class="sobre" id="sobre">
+            <h2 class="heading">Sobre <span>Mim</span></h2>
 
-</html>
+            <div class="sobre-img">
+                <img src="/images/py-mainbg.jpg" alt="">
+                <span class="circle-spin"></span>
+            </div>
+
+            <div class="sobre-content">
+                <h3>Desenvolvedor Full stack!</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis natus animi dolorum ducimus
+                    exercitationem praesentium veritatis doloribus, quibusdam in temporibus sed facere enim vero soluta
+                    vel
+                    qui corporis repellat nemo quis distinctio. Quasi, dicta officiis! Aut distinctio at nihil
+                    provident,
+                    quae voluptatibus voluptatem alias nostrum aliquam iusto tempore ex harum.</p>
+                <div class="btn-box btns">
+                    <a href="#" class="btn">Leia mais</a>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/script.js"></script>
+    </body>
+
+    </html>
