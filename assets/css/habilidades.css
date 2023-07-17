@@ -1,0 +1,111 @@
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+.habilidades {
+    min-height: 100vh;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+
+.habilidades .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.habilidades-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.habilidades-row .habilidades-column {
+    flex: 1 1 40rem;
+}
+
+.habilidades-column .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.habilidades-box .habilidades-content {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.habilidades-box .habilidades-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.habilidades-box .habilidades-content:hover::before {
+    width: 100%;
+}
+
+.habilidades-content .progresso {
+    padding: 1rem 0;
+}
+
+.habilidades-content .progresso h3 {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.habilidades-content .progresso h3 span {
+    color: var(--text-color);
+}
+
+.habilidades-content .progresso .bar {
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.habilidades-content .progresso .bar span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(1) .bar span {
+    width: 90%;
+}
+
+.habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(2) .bar span {
+    width: 50%;
+}
+
+.habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(3) .bar span {
+    width: 50%;
+}
+
+.habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(4) .bar span {
+    width: 80%;
+}
+
+.habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(5) .bar span {
+    width: 80%;
+}
+
+.habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(6) .bar span {
+    width: 50%;
+}
