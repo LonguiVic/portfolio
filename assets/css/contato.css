@@ -7,4 +7,82 @@
 
 .contato {
     background: var(--second-bg-color);
+    min-height: 100vh;
+    padding: 7rem;
+}
+
+.contato .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contato form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contato form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contato form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contato form .input-box .input-field input,
+.contato form .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+.contato form .input-box .input-field input::placeholder,
+.contato form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contato form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: red;
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contato form .input-box .input-field input:focus~.focus,
+.contato form .input-box .input-field input:valid~.focus,
+.contato form .textarea-field textarea:focus~.focus,
+.contato form .textarea-field textarea:valid~.focus {
+    width: 100%;
+}
+
+
+.contato form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contato form .textarea-field textarea {
+    resize: none;
+}
+
+.contato form .btn-box.btns .btn {
+    cursor: pointer;
 }
