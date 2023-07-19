@@ -7,8 +7,6 @@
 
 .contato {
     background: var(--second-bg-color);
-    min-height: 100vh;
-    padding: 7rem;
 }
 
 .contato .heading {
@@ -19,70 +17,51 @@
 
 .contato form {
     max-width: 70rem;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .contato form .input-box {
-    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.contato form .input-box .input-field {
-    position: relative;
-    width: 49%;
-    margin: .8rem 0;
-}
-
-.contato form .input-box .input-field input,
-.contato form .textarea-field textarea {
+.contato form .input-box input,
+.contato form textarea {
     width: 100%;
-    height: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
-    background: transparent;
-    border-radius: .6rem;
-    border: .2rem solid var(--main-color);
+    background: var(--bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
 }
 
-.contato form .input-box .input-field input::placeholder,
-.contato form .textarea-field textarea::placeholder {
-    color: var(--text-color);
+.contato form .input-box input {
+    width: 49%;
 }
 
-.contato form .focus {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: red;
-    border-radius: .6rem;
-    z-index: -1;
-    transition: .5s;
-}
-
-.contato form .input-box .input-field input:focus~.focus,
-.contato form .input-box .input-field input:valid~.focus,
-.contato form .textarea-field textarea:focus~.focus,
-.contato form .textarea-field textarea:valid~.focus {
-    width: 100%;
-}
-
-
-.contato form .textarea-field {
-    position: relative;
-    margin: .8rem 0 2.7rem;
-    display: flex;
-}
-
-.contato form .textarea-field textarea {
+.contato form textarea {
     resize: none;
 }
 
-.contato form .btn-box.btns .btn {
+.contato form .btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-top: 2rem;
     cursor: pointer;
+}
+
+.contato form .btn:hover {
+    box-shadow: none;
 }
