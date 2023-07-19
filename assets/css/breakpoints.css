@@ -33,7 +33,7 @@
     }
 }
 
-@media(max-width: 898px) {
+@media(max-width: 768px) {
     .header {
         background: var(--bg-color);
     }
@@ -90,5 +90,151 @@
     .navbar.navjs.active a {
         transform: translateX(0);
         transition-delay: .25s;
+    }
+
+    .inicio-imgHover {
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+
+@media(max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .inicio-content h1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inicio-media {
+        width: 160px;
+    }
+
+    .inicio-media a {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media(max-width: 462px) {
+    .inicio-content h1 {
+        font-size: 5.2rem;
+    }
+
+    .educacao {
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contato form .input-box input {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media(max-width: 371px) {
+    .inicio {
+        justify-content: center;
+    }
+
+    .inicio-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inicio-content h1 {
+        font-size: 5rem;
+    }
+}
+
+.animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 98;
+}
+
+.animate.inicio-img {
+    width: 50%;
+}
+
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.inicio.show-animate .animate {
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+}
+
+.animate.scroll {
+    transition: 1s ease;
+    transition-delay: calc(.3s / var(--i));
+
+}
+
+.sobre.show-animate .animate.scroll {
+    transition-delay: calc(.3s * var(--i));
+    width: 0;
+}
+
+@keyframes homeBgText {
+
+    0%,
+    10%,
+    100% {
+        background-position: -42rem 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
     }
 }

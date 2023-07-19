@@ -21,7 +21,11 @@ window.onscroll = () => {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            })
+            });
+            sec.classList.add('show-animate');
+        }
+        else {
+            sec.classList.remove('show-animate');
         }
     });
 }
@@ -43,3 +47,6 @@ window.addEventListener('scroll', alterarClasseBarraNavegacao);
 
 // Chamar a função uma vez ao carregar a página para lidar com o estado inicial
 alterarClasseBarraNavegacao();
+
+menuIcon.classList.remove('bx-x');
+navjs.classList.remove('active');
