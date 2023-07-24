@@ -1,0 +1,1342 @@
+<!--Esse código foi inspirado no canail Codehal-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Dev</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!--box icons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap";
+        @import "https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,300&family=Poppins:wght@300;400;500;600;700;800;900&display=swap";
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif
+        }
+
+        :root {
+            --bg-color: #081b29;
+            --second-bg-color: #112e42;
+            --text-color: #ededed;
+            --main-color: #00abf0
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color)
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: .3s
+        }
+
+        .logo {
+            position: relative;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600
+        }
+
+        .navbar {
+            position: relative
+        }
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: var(--text-color);
+            font-weight: 500;
+            margin: 3.5rem
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--main-color)
+        }
+
+        .scrolling {
+            background-color: var(--bg-color);
+            transition: background-color .3s ease
+        }
+
+        #menu-icon {
+            position: relative;
+            font-size: 3.6rem;
+            color: var(--text-color);
+            cursor: pointer;
+            display: none
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 2rem
+        }
+
+        .inicio {
+            display: flex;
+            align-items: center;
+            padding: 0 9%;
+            background: url(/images/BG-Python.jpg) no-repeat;
+            background-size: cover;
+            background-position: center
+        }
+
+        .inicio-content {
+            max-width: 70rem;
+            z-index: 99
+        }
+
+        .inicio-content h1 {
+            position: relative;
+            display: inline-block;
+            font-size: 5.6rem;
+            font-weight: 700;
+            line-height: 1.3
+        }
+
+        .inicio-content .text-animate {
+            position: relative;
+            width: 42rem
+        }
+
+        .inicio-content .text-animate h3 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: .7px var(--main-color);
+            background-image: linear-gradient(var(--main-color), var(--main-color));
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            background-position: -42rem 0;
+            animation: homeBgText 6s linear infinite;
+            animation-delay: 2s
+        }
+
+        .inicio-content .text-animate h3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            border-right: 2px solid var(--main-color);
+            z-index: -1;
+            animation: homeCursorText 6s linear infinite;
+            animation-delay: 2s
+        }
+
+        .inicio-content p {
+            position: relative;
+            font-size: 1.6rem;
+            margin: 2rem 0 4rem
+        }
+
+        .inicio-content .btn-box {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 30rem;
+            height: 5rem
+        }
+
+        .btn-box .btn {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: 100%;
+            padding-left: .2rem;
+            text-align: center;
+            background: var(--main-color);
+            border: .2rem solid var(--main-color);
+            border-radius: .8rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            color: var(--bg-color);
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s
+        }
+
+        .btn-box .btn:hover {
+            color: var(--main-color)
+        }
+
+        .btn-box .btn:nth-child(2) {
+            background: transparent;
+            color: var(--main-color)
+        }
+
+        .btn-box .btn:nth-child(2):hover {
+            color: var(--bg-color)
+        }
+
+        .btn-box .btn:nth-child(2)::before {
+            background: var(--main-color)
+        }
+
+        .btn-box .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: -1;
+            transition: .5s
+        }
+
+        .btn-box .btn:hover::before {
+            width: 100%
+        }
+
+        .inicio-media {
+            position: absolute;
+            bottom: 4rem;
+            width: 170px;
+            display: flex;
+            justify-content: space-between
+        }
+
+        .inicio-media a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: .2rem solid var(--main-color);
+            border-radius: 50%;
+            font-size: 20px;
+            color: var(--main-color);
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s
+        }
+
+        .inicio-media a:hover {
+            color: var(--bg-color)
+        }
+
+        .inicio-media a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--main-color);
+            z-index: -1;
+            transition: .5s
+        }
+
+        .inicio-media a:hover::before {
+            width: 100%
+        }
+
+        .inicio-imgHover {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: transparent;
+            transition: 3s
+        }
+
+        .inicio-imgHover:hover {
+            background: var(--bg-color);
+            opacity: .8
+        }
+
+        .sobre {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            background: var(--second-bg-color);
+            padding-bottom: 6rem
+        }
+
+        .sobre .heading {
+            position: relative;
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            text-align: center
+        }
+
+        span {
+            color: var(--main-color)
+        }
+
+        .sobre .sobre-img {
+            position: relative;
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .sobre-img img {
+            width: 90%;
+            border-radius: 50%;
+            border: .2rem solid var(--main-color)
+        }
+
+        .sobre-img .circle-spin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border-top: .2rem solid var(--second-bg-color);
+            border-bottom: .2rem solid var(--second-bg-color);
+            border-left: .2rem solid var(--main-color);
+            border-right: .2rem solid var(--main-color);
+            animation: aboutSpinner 8s linear infinite
+        }
+
+        .sobre-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .sobre-content h3 {
+            font-size: 2.6rem
+        }
+
+        .sobre-content p {
+            font-size: 1.6rem;
+            margin: 2rem 0 3rem
+        }
+
+        .btn-box .btns {
+            display: flex;
+            justify-content: center;
+            display: inline-block;
+            width: 15rem
+        }
+
+        .btn-box .btns a::before {
+            background: var(--second-bg-color)
+        }
+
+        .educacao {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            padding-bottom: 5rem
+        }
+
+        .educacao .educacao-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem
+        }
+
+        .educacao-row .educacao-column {
+            flex: 1 1 40rem
+        }
+
+        .educacao-row .educacao-column .title {
+            font-size: 2.5rem;
+            margin: 0 0 1.5rem 2rem
+        }
+
+        .educacao .heading {
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            text-align: center
+        }
+
+        .educacao .heading span {
+            color: var(--main-color)
+        }
+
+        .educacao-column .educacacao-box {
+            border-left: .2rem solid var(--main-color)
+        }
+
+        .educacacao-box .educacao-content {
+            position: relative;
+            padding-left: 2rem
+        }
+
+        .educacacao-box .educacao-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -1.1rem;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--main-color);
+            border-radius: 50%
+        }
+
+        .educacao-content .content {
+            position: relative;
+            padding: 1.5rem;
+            border: .2rem solid var(--main-color);
+            border-radius: .6rem;
+            margin-bottom: 2rem;
+            overflow: hidden
+        }
+
+        .educacao-content .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--second-bg-color);
+            z-index: -1;
+            transition: .5s
+        }
+
+        .educacao-content .content:hover::before {
+            width: 100%
+        }
+
+        .educacao-content .year {
+            font-size: 1.5rem;
+            color: var(--main-color);
+            padding-bottom: .5rem
+        }
+
+        .educacao-content .content .year i {
+            padding-right: .5rem
+        }
+
+        .educacao-content .content h3 {
+            font-size: 3rem
+        }
+
+        .educacao-content .content p {
+            font-size: 1.6rem;
+            padding-top: .5rem
+        }
+
+        .habilidades {
+            min-height: 100vh;
+            padding-bottom: 7rem;
+            background: var(--second-bg-color)
+        }
+
+        .habilidades .heading {
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            text-align: center
+        }
+
+        .habilidades-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem
+        }
+
+        .habilidades-row .habilidades-column {
+            flex: 1 1 40rem
+        }
+
+        .habilidades-column .title {
+            font-size: 2.5rem;
+            margin: 0 0 1.5rem
+        }
+
+        .habilidades-box .habilidades-content {
+            position: relative;
+            border: .2rem solid var(--main-color);
+            border-radius: .6rem;
+            padding: .5rem 1.5rem;
+            z-index: 1;
+            overflow: hidden
+        }
+
+        .habilidades-box .habilidades-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: -1;
+            transition: .5s
+        }
+
+        .habilidades-box .habilidades-content:hover::before {
+            width: 100%
+        }
+
+        .habilidades-content .progresso {
+            padding: 1rem 0
+        }
+
+        .habilidades-content .progresso h3 {
+            font-size: 1.7rem;
+            display: flex;
+            justify-content: space-between
+        }
+
+        .habilidades-content .progresso h3 span {
+            color: var(--text-color)
+        }
+
+        .habilidades-content .progresso .bar {
+            height: 2.5rem;
+            border-radius: .6rem;
+            border: .2rem solid var(--main-color);
+            padding: .5rem;
+            margin: 1rem 0
+        }
+
+        .habilidades-content .progresso .bar span {
+            display: block;
+            height: 100%;
+            border-radius: .3rem;
+            background: var(--main-color)
+        }
+
+        .habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(1) .bar span {
+            width: 50%
+        }
+
+        .habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(2) .bar span {
+            width: 50%
+        }
+
+        .habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(3) .bar span {
+            width: 50%
+        }
+
+        .habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(4) .bar span {
+            width: 80%
+        }
+
+        .habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(5) .bar span {
+            width: 80%
+        }
+
+        .habilidades-column:nth-child(1) .habilidades-content .progresso:nth-child(6) .bar span {
+            width: 50%
+        }
+
+        .portfolio .heading {
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            text-align: center
+        }
+
+        .portfolio {
+            background: var(--bg-color)
+        }
+
+        .porfolio-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 2.5rem
+        }
+
+        .porfolio-container .portfolio-box {
+            position: relative;
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem var(--second-bg-color);
+            overflow: hidden;
+            display: flex
+        }
+
+        .portfolio-box img {
+            width: 100%;
+            transition: .5s ease
+        }
+
+        .portfolio-box:hover img {
+            transform: scale(1.1)
+        }
+
+        .portfolio-box .portfolio-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 4rem;
+            transform: translateY(100%);
+            transition: .5s ease
+        }
+
+        .portfolio-box:hover .portfolio-layer {
+            transform: translateY(0)
+        }
+
+        .portfolio-layer h4 {
+            font-size: 3rem
+        }
+
+        .portfolio-layer p {
+            font-size: 1.6rem;
+            padding: .3rem 0 1rem
+        }
+
+        .portfolio-layer a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background: var(--text-color);
+            border-radius: 50%
+        }
+
+        .portfolio-layer a i {
+            font-size: 2rem;
+            color: var(--second-bg-color)
+        }
+
+        .contato {
+            background: var(--second-bg-color)
+        }
+
+        .contato .heading {
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            text-align: center
+        }
+
+        .contato form {
+            max-width: 70rem;
+            margin: 1rem auto;
+            text-align: center;
+            margin-bottom: 3rem
+        }
+
+        .contato form .input-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+        }
+
+        .contato form .input-box input,
+        .contato form textarea {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            background: var(--bg-color);
+            border-radius: .8rem;
+            margin: .7rem 0
+        }
+
+        .contato form .input-box input {
+            width: 49%
+        }
+
+        .contato form textarea {
+            resize: none
+        }
+
+        .contato form .btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--second-bg-color);
+            letter-spacing: .1rem;
+            font-weight: 600;
+            transition: .5s ease;
+            margin-top: 2rem;
+            cursor: pointer
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 9%;
+            background-color: var(--bg-color);
+        }
+
+        .footer .footer-text {
+            font-size: 1.6rem;
+        }
+
+        .footer-icon a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            background: var(--main-color);
+            border: .2rem solid var(--main-color);
+            border-radius: .6rem;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .footer-icon a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--second-bg-color);
+            z-index: -1;
+            transition: .5s;
+        }
+
+        .footer-icon a:hover::before {
+            width: 100%;
+        }
+
+        .footer-icon a i {
+            font-size: 2.4rem;
+            color: var(--bg-color);
+            transition: .5s;
+        }
+
+        .footer-icon a:hover i {
+            color: var(--main-color);
+        }
+
+        .contato form .btn:hover {
+            box-shadow: none
+        }
+
+        @media(max-width: 1200px) {
+            html {
+                font-size: 50%
+            }
+        }
+
+        @media(max-width: 991px) {
+            html {
+                font-size: 44%
+            }
+
+            .header {
+                padding: 2rem 4%
+            }
+
+            section {
+                padding: 10rem 4% 2rem
+            }
+
+            .inicio {
+                padding: 0 4%
+            }
+
+            .footer {
+                padding: 2rem 4%
+            }
+
+            .portfolio {
+                padding-bottom: 7rem;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .header {
+                background: var(--bg-color)
+            }
+
+            #menu-icon {
+                display: block
+            }
+
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                padding: 1rem 4%;
+                background: var(--main-color);
+                transition: .25s ease;
+                transition-delay: .25s;
+                z-index: 1;
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2)
+            }
+
+            .navbar.navjs.active {
+                transition-delay: 0;
+                left: 0
+            }
+
+            .navbar .active-nav {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: var(--bg-color);
+                border-top: .1rem solid rgba(0, 0, 0, .2);
+                z-index: -1;
+                transition: .25s ease;
+                transition-delay: 0
+            }
+
+            .navbar.navjs.active .active-nav {
+                transition-delay: .25s;
+                left: 0
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+                transform: translateX(-20rem);
+                transition: .25s ease;
+                transition-delay: 0
+            }
+
+            .navbar.navjs.active a {
+                transform: translateX(0);
+                transition-delay: .25s
+            }
+
+            .inicio-imgHover {
+                pointer-events: none;
+                background: var(--bg-color);
+                opacity: .6
+            }
+
+            .portfolio h2 {
+                margin-bottom: 3rem;
+            }
+
+            .porfolio-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width: 617px) {
+            .porfolio-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 520px) {
+            html {
+                font-size: 50%
+            }
+
+            .inicio-content h1 {
+                display: flex;
+                flex-direction: column
+            }
+
+            .inicio-media {
+                width: 160px
+            }
+
+            .inicio-media a {
+                width: 38px;
+                height: 38px
+            }
+        }
+
+        @media(max-width: 462px) {
+            .inicio-content h1 {
+                font-size: 5.2rem
+            }
+
+            .educacao {
+                padding: 10rem 4% 5rem 5%
+            }
+
+            .contato form .input-box input {
+                width: 100%
+            }
+
+            .footer {
+                flex-direction: column-reverse
+            }
+
+            .footer p {
+                margin-top: 2rem;
+                text-align: center
+            }
+        }
+
+        @media(max-width: 371px) {
+            .inicio {
+                justify-content: center
+            }
+
+            .inicio-content {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                text-align: center
+            }
+
+            .inicio-content h1 {
+                font-size: 5rem
+            }
+        }
+
+        .animate {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: 98
+        }
+
+        .animate.inicio-img {
+            width: 50%
+        }
+
+        .logo .animate,
+        .navbar .animate,
+        #menu-icon .animate,
+        .inicio.show-animate .animate {
+            animation: showRight 1s ease forwards;
+            animation-delay: calc(.3s * var(--i))
+        }
+
+        .animate.scroll {
+            transition: 1s ease;
+            transition-delay: calc(.3s / var(--i))
+        }
+
+        .sobre.show-animate .animate.scroll {
+            transition-delay: calc(.3s * var(--i));
+            width: 0
+        }
+
+        @keyframes homeBgText {
+
+            0%,
+            10%,
+            100% {
+                background-position: -42rem 0
+            }
+
+            65%,
+            85% {
+                background-position: 0 0
+            }
+        }
+
+        @keyframes homeCursorText {
+
+            0%,
+            10%,
+            100% {
+                width: 0
+            }
+
+            65%,
+            78%,
+            85% {
+                width: 100%;
+                opacity: 1
+            }
+
+            75%,
+            81% {
+                opacity: 0
+            }
+        }
+
+        @keyframes aboutSpinner {
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg)
+            }
+        }
+
+        @keyframes showRight {
+            100% {
+                width: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--header design-->
+    <header class="header" class="scrolling" id="navbar">
+        <a href="#inicio" class="logo">Victor.<span class="animate" style="--i:1;"></span></a>
+
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar navjs">
+            <a href="#inicio" class="active">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#educacao">Educação</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#portfolio">Portfólio</a>
+            <!--
+            <a href="#contato">Contato</a>
+            -->
+
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+
+    <!--design seção de início-->
+    <section class="inicio show-animate" id="inicio">
+        <div class="inicio-content">
+            <h1>Oi, eu sou <span>Victor Longui</span><span class="animate" style="--i:2;"></span></h1>
+            <div class="text-animate">
+                <h3>Desenvolvedor Full stack</h3>
+                <span class="animate" style="--i:3;"></span>
+            </div>
+            <p>
+                Sou um desenvolvedor em formação, com 20 anos, focado em aprender Python, Django, HTML, CSS e MySQL. Meu
+                site portfólio reflete meu crescimento e dedicação para me tornar um desenvolvedor full stack no futuro.
+                <span class="animate" style="--i:4;"></span>
+            </p>
+
+            <div class="btn-box">
+                <a href="/doc/Curriculo-Dev.pdf" target="_blank" class="btn">Currículo</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHHRvkfn0jL-qtcwLFZ3_oDPyWy-eMUpptUxxgyYI6cETJcg/viewform?"
+                    target="_blank" class="btn">Vamos conversar</a>
+
+                <span class="animate" style="--i:5;"></span>
+            </div>
+        </div>
+
+        <div class="inicio-media">
+            <a href="https://github.com/LonguiVic" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/victor-longui-pereira/" target="_blank"><i
+                    class='bx bxl-linkedin'></i></a>
+            <a href="https://wa.me/5511969219875?text=Ol%C3%A1,%20Victor!%20Vi%20o%20seu%20portf%C3%B3lio%20e%20fiquei%20interessado%20com%20o%20seu%20trabalho%20como%20desenvolvedor%20de%20software.%20Podemos%20conversar%20mais%20sobre%20poss%C3%ADveis%20propostas%20de%20emprego?"
+                target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            <span class="animate" style="--i:6;"></span>
+        </div>
+        <div class="inicio-imgHover"></div>
+        <span class="animate inicio-img" style="--i:7;"></span>
+
+    </section>
+
+    <!--Design da Seção Sobre-->
+
+    <section class="sobre" id="sobre">
+        <h2 class="heading">Sobre <span>Mim</span></h2>
+
+        <div class="sobre-img">
+            <img src="/images/py-mainbg.jpg" alt="">
+            <span class="circle-spin"></span>
+        </div>
+
+        <div class="sobre-content">
+            <h3>Desenvolvedor Full stack!</h3>
+            <p>Tenho 20 anos e sou um entusiasta da Engenharia de Software. Estudo Python, Django, HTML, CSS e MySQL
+                para me tornar um desenvolvedor full stack no futuro. Este é meu site portfolio, clique em 'ler mais'
+                para descobrir mais sobre mim e meu percurso na área de programação.</p>
+            <div class="btn-box btns">
+                <a href="#educacao" class="btn">Leia mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!--Design da Seção de Educação-->
+
+    <section class="educacao" id="educacao">
+        <h2 class="heading">Minha <span>Jornada</span></h2>
+
+        <div class="educacao-row">
+            <div class="educacao-column">
+                <h3 class="title">Educação</h3>
+
+                <div class="educacacao-box">
+                    <div class="educacao-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2023 - Atual</div>
+                            <h3>Bacharelado em Engenharia de Software - UNICSUL</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusamus
+                                adipisci ea vero. Et, provident! Rem eveniet optio cum voluptate.</p>
+                        </div>
+                    </div>
+
+                    <div class="educacao-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2023 - 2023</div>
+                            <h3>Curso de Python Avançado - Udemy</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusamus
+                                adipisci ea vero. Et, provident! Rem eveniet optio cum voluptate.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="educacao-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2023 - 2023</div>
+                            <h3>Curso de Django - Udemy</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusamus
+                                adipisci ea vero. Et, provident! Rem eveniet optio cum voluptate.</p>
+                        </div>
+                    </div>
+
+                    <div class="educacao-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2023 - 2023</div>
+                            <h3>Curso de AWS - Udemy</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusamus
+                                adipisci ea vero. Et, provident! Rem eveniet optio cum voluptate.</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!--
+                <div class="educacao-column">
+                    <h3 class="title">Experiência</h3>
+
+                    <div class="educacacao-box">
+                        <div class="educacao-content">
+                            <div class="content">
+                                <div class="year"><i class='bx bxs-calendar'></i>2023 - Atual</div>
+                                <h3>Freelancer</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusamus
+                                    adipisci ea vero. Et, provident! Rem eveniet optio cum voluptate.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                -->
+
+        </div>
+    </section>
+
+    <!--Design da Seção de Habilidades-->
+    <section class="habilidades" id="habilidades">
+        <h2 class="heading">Minhas <span>Habilidades</span></h2>
+
+        <div class="habilidades-row">
+            <div class="habilidades-column">
+                <h3 class="title">Habilidades de Codificação</h3>
+
+                <div class="habilidades-box">
+                    <div class="habilidades-content">
+                        <div class="progresso">
+                            <h3>Python <span>50%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progresso">
+                            <h3>Django <span>50%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progresso">
+                            <h3>SQL <span>50%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progresso">
+                            <h3>HTML <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progresso">
+                            <h3>CSS <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progresso">
+                            <h3>AWS <span>50%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Em quaso de precisar adicionar habilidades profissionais 
+                <div class="habilidades-column">
+                    <h3 class="title">Habilidades Profissionais</h3>
+
+                    <div class="habilidades-box">
+                        <div class="habilidades-content">
+                            <div class="progresso">
+                                <h3>Python <span>70%</span></h3>
+                                <div class="bar"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+-->
+
+
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Últimos <span>Projetos</span></h2>
+
+        <div class="porfolio-container">
+            <div class="portfolio-box">
+                <img src="/images/projeto-portfolio.JPG" alt="">
+                <div class="portfolio-layer">
+                    <h4>Portfólio</h4>
+                    <p>Site criado para manter minhas informações, trajetória de estudos e projetos.</p>
+                    <a href="http://portfolio-victor-longui.com.br"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <!--
+            <div class="portfolio-box">
+                <img src="/images/imagemTeste.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, illo.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/imagemTeste.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, illo.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        -->
+
+
+        </div>
+    </section>
+
+    <!--Design da Sessão de Contato
+    <section class="contato" id="contato">
+        <h2 class="heading">Vamos <span>Conversar!</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Nome Completo">
+                <input type="email" placeholder="Endereço de E-mail">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Número de celular">
+                <input type="text" placeholder="Assunto do E-mail">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Sua Menssagem"></textarea>
+            <input type="submit" value="Enviar Menssagem" class="btn">
+        </form>
+    </section>
+-->
+
+    <!--Design do rodapé-->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Victor Longui & Codehal | All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-icon">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!--Customizações com Js-->
+    <script>
+        let menuIcon = document.querySelector("#menu-icon"),
+            navjs = document.querySelector(".navjs");
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle("bx-x");
+            navjs.classList.toggle("active");
+        };
+
+        let sections = document.querySelectorAll("section"),
+            navLinks = document.querySelectorAll("header nav a");
+
+        window.onscroll = () => {
+            sections.forEach(a => {
+                let b = window.scrollY,
+                    c = a.offsetTop - 100,
+                    d = a.offsetHeight,
+                    e = a.getAttribute("id");
+
+                if (b >= c && b < c + d) {
+                    navLinks.forEach(a => {
+                        a.classList.remove("active");
+                        document.querySelector("header nav a[href*=" + e + "]").classList.add("active");
+                    });
+                    a.classList.add("show-animate");
+                } else {
+                    a.classList.remove("show-animate");
+                }
+            });
+        };
+
+        const navbar = document.getElementById("navbar");
+
+        function alterarClasseBarraNavegacao() {
+            if (window.scrollY > 0) {
+                navbar.classList.add("scrolling");
+            } else {
+                navbar.classList.remove("scrolling");
+            }
+        }
+
+        window.addEventListener("scroll", alterarClasseBarraNavegacao);
+        alterarClasseBarraNavegacao();
+
+        menuIcon.classList.remove("bx-x");
+        navjs.classList.remove("active");
+    </script>
+</body>
+
+</html>
