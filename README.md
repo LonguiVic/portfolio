@@ -1,3 +1,5 @@
+![logo](https://github.com/LonguiVic/portfolio/assets/132114257/4a6c3b0b-c0e4-4a2e-8a90-b5b7f4c211ac)
+
 <h1>My Portfolio</h1>
 
 > Status: Developed ✔️
