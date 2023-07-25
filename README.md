@@ -33,6 +33,9 @@
   * <h3>Portfólio (Portfolio)</h3>
   On the Portfolio page, I present projects that I carry out, whether they are back or front end. Currently there is only one project which is the portfolio itself, but over time I will add more projects.
 
+### Preview:
+
+![ezgif com-video-to-gif](https://github.com/LonguiVic/portfolio/assets/132114257/14603bc7-682a-4930-8435-cc951399fec5)
 
 
   
