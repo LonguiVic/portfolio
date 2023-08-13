@@ -1273,13 +1273,14 @@
     <section class="contato" id="contato">
         <h2 class="heading">Vamos <span>Conversar!</span></h2>
 
-        <form action="/PHP/email.php" class="form" method="POST">
+        <form action="https://formsubmit.co/contatoportfoliodev@gmail.com" method="POST">
             <div class="input-box">
-                <input type="text" placeholder="Nome Completo" class="field" name="name">
-                <input type="email" placeholder="Endereço de E-mail" class="field" name="email">
+                <input type="text" placeholder="Nome Completo" name="name" required />
+                <input type="email" placeholder="Endereço de E-mail" name="email" required />
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Sua Menssagem" class="field"
-                name="message"></textarea>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://portfolio-victor-longui.com.br" />
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Sua Menssagem" required></textarea>
             <input type="submit" value="Enviar Menssagem" class="btn">
         </form>
 
@@ -1346,6 +1347,7 @@
 
         menuIcon.classList.remove("bx-x");
         navjs.classList.remove("active");
+
     </script>
 </body>
 
