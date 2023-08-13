@@ -1,0 +1,8 @@
+##### LOCAWEB - NAO REMOVER #####
+AddHandler php80-script .php
+suPHP_ConfigPath /home/portfolio-victor1/
+##### LOCAWEB - NAO REMOVER #####
+
+#CONFIGURAR UTILIZAÇÃO DO HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

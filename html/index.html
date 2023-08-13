@@ -582,6 +582,8 @@
 
         .porfolio-container .portfolio-box {
             position: relative;
+            height: 25rem;
+            width: 45rem;
             border-radius: 2rem;
             box-shadow: 0 0 1rem var(--second-bg-color);
             overflow: hidden;
@@ -1242,16 +1244,16 @@
                     <a href="http://portfolio-victor-longui.com.br"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
-            <!--
+
             <div class="portfolio-box">
-                <img src="/images/imagemTeste.jpg" alt="">
+                <img src="/images/xmltoexcel.JPG" alt="">
                 <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, illo.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    <h4>XML para XLSX</h4>
+                    <p>Script Python: Converte XMLs em Excel.</p>
+                    <a href="https://github.com/LonguiVic/XML" target="_blank"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
-
+            <!--
             <div class="portfolio-box">
                 <img src="/images/imagemTeste.jpg" alt="">
                 <div class="portfolio-layer">
@@ -1266,24 +1268,25 @@
         </div>
     </section>
 
-    <!--Design da Sessão de Contato
+    <!--Design da Sessão de Contato-->
+
     <section class="contato" id="contato">
         <h2 class="heading">Vamos <span>Conversar!</span></h2>
 
-        <form action="#">
+        <form action="/PHP/email.php" class="form" method="POST">
             <div class="input-box">
-                <input type="text" placeholder="Nome Completo">
-                <input type="email" placeholder="Endereço de E-mail">
+                <input type="text" placeholder="Nome Completo" class="field" name="name">
+                <input type="email" placeholder="Endereço de E-mail" class="field" name="email">
             </div>
-            <div class="input-box">
-                <input type="number" placeholder="Número de celular">
-                <input type="text" placeholder="Assunto do E-mail">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Sua Menssagem"></textarea>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Sua Menssagem" class="field"
+                name="message"></textarea>
             <input type="submit" value="Enviar Menssagem" class="btn">
         </form>
+
+
+
     </section>
--->
+
 
     <!--Design do rodapé-->
     <footer class="footer">
